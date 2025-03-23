@@ -1,0 +1,25 @@
+<header class="bg-white shadow-md">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <!-- Logo -->
+    <div class="text-2xl font-bold text-blue-600">Accounting App</div>
+    <!-- Hamburger Menu (Mobile) -->
+    <button class="lg:hidden text-blue-600 focus:outline-none" (click)="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <!-- Navigation -->
+    <nav [ngClass]="{'hidden': !isMenuOpen, 'block': isMenuOpen}" class="absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none lg:flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8 p-4 lg:p-0 z-50">
+      <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Caractéristiques</a>
+      <a href="#pricing" class="text-gray-700 hover:text-blue-600 transition">Tarification</a>
+      <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Témoignages</a>
+    </nav>
+    <!-- Buttons -->
+    <div class="hidden lg:flex items-center space-x-4">
+      <button class="text-blue-600 hover:underline transition">Se connecter</button>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+        Démarrer l'essai gratuit
+      </button>
+    </div>
+  </div>
+</header>
