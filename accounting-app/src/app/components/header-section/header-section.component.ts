@@ -126,4 +126,11 @@ export class HeaderSectionComponent {
     this.isMenuOpen = !this.isMenuOpen;
     console.log('Menu toggled:', this.isMenuOpen); 
   }
+
+  closeMenu(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('nav')) {
+      this.isMenuOpen = false;
+    }
+  }
 }

@@ -8,8 +8,21 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-    <!-- Navigation -->
-    <nav [ngClass]="{'hidden': !isMenuOpen, 'block': isMenuOpen}" class="absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none lg:flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8 p-4 lg:p-0 z-50">
+    <!-- Sidebar Navigation -->
+    <div *ngIf="isMenuOpen" class="fixed inset-0  bg-opacity-50 z-50" (click)="closeMenu($event)">
+      <nav class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6">
+        <button class="self-end text-gray-600 focus:outline-none" (click)="toggleMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <a href="#features" class="block mt-4 text-gray-700 hover:text-blue-600">Caractéristiques</a>
+        <a href="#pricing" class="block mt-4 text-gray-700 hover:text-blue-600">Tarification</a>
+        <a href="#testimonials" class="block mt-4 text-gray-700 hover:text-blue-600">Témoignages</a>
+      </nav>
+    </div>
+    <!-- Inline Navigation (Desktop) -->
+    <nav class="hidden lg:flex items-center space-x-8">
       <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Caractéristiques</a>
       <a href="#pricing" class="text-gray-700 hover:text-blue-600 transition">Tarification</a>
       <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Témoignages</a>
